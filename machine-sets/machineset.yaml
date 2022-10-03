@@ -10,6 +10,8 @@ metadata:
     machine.openshift.io/cluster-api-cluster: ngirard-xwxnh
   name: ngirard-xwxnh-worker-us-east-2a
   namespace: openshift-machine-api
+  resourceVersion: "60939"
+  uid: 6b649893-819c-4541-b457-1466bfdf396a
 spec:
   replicas: 1
   selector:
