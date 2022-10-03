@@ -2,17 +2,20 @@ apiVersion: machine.openshift.io/v1beta1
 kind: MachineSet
 metadata:
   annotations:
+    kubectl.kubernetes.io/last-applied-configuration: |
+      {"apiVersion":"machine.openshift.io/v1beta1","kind":"MachineSet","metadata":{"annotations":{"machine.openshift.io/GPU":"0","machine.openshift.io/memoryMb":"8192","machine.openshift.io/vCPU":"2"},"creationTimestamp":"2022-10-03T13:11:43Z","generation":1,"labels":{"app.kubernetes.io/instance":"machineset","machine.openshift.io/cluster-api-cluster":"ngirard-xwxnh"},"name":"ngirard-xwxnh-worker-us-east-2a","namespace":"openshift-machine-api","resourceVersion":"19467","uid":"ecc9b663-8126-4d94-ba7a-fc37927d7ad8"},"spec":{"replicas":1,"selector":{"matchLabels":{"machine.openshift.io/cluster-api-cluster":"ngirard-xwxnh","machine.openshift.io/cluster-api-machineset":"ngirard-xwxnh-worker-us-east-2a"}},"template":{"metadata":{"labels":{"machine.openshift.io/cluster-api-cluster":"ngirard-xwxnh","machine.openshift.io/cluster-api-machine-role":"worker","machine.openshift.io/cluster-api-machine-type":"worker","machine.openshift.io/cluster-api-machineset":"ngirard-xwxnh-worker-us-east-2a"}},"spec":{"metadata":{},"providerSpec":{"value":{"ami":{"id":"ami-09145c219cb4df3e1"},"apiVersion":"awsproviderconfig.openshift.io/v1beta1","blockDevices":[{"ebs":{"encrypted":true,"iops":0,"kmsKey":{"arn":""},"volumeSize":120,"volumeType":"gp2"}}],"credentialsSecret":{"name":"aws-cloud-credentials"},"deviceIndex":0,"iamInstanceProfile":{"id":"ngirard-xwxnh-worker-profile"},"instanceType":"m5.large","kind":"AWSMachineProviderConfig","metadata":{"creationTimestamp":null},"placement":{"availabilityZone":"us-east-2a","region":"us-east-2"},"securityGroups":[{"filters":[{"name":"tag:Name","values":["ngirard-xwxnh-worker-sg"]}]}],"subnet":{"filters":[{"name":"tag:Name","values":["ngirard-xwxnh-private-us-east-2a"]}]},"tags":[{"name":"kubernetes.io/cluster/ngirard-xwxnh","value":"owned"}],"userDataSecret":{"name":"worker-user-data"}}}}}},"status":{"availableReplicas":1,"fullyLabeledReplicas":1,"observedGeneration":1,"readyReplicas":1,"replicas":1}}
     machine.openshift.io/GPU: "0"
     machine.openshift.io/memoryMb: "8192"
     machine.openshift.io/vCPU: "2"
-  creationTimestamp: "2022-10-03T13:11:43Z"
+  creationTimestamp: "2022-10-03T14:46:30Z"
   generation: 1
   labels:
+    app.kubernetes.io/instance: machineset
     machine.openshift.io/cluster-api-cluster: ngirard-xwxnh
   name: ngirard-xwxnh-worker-us-east-2a
   namespace: openshift-machine-api
-  resourceVersion: "19467"
-  uid: ecc9b663-8126-4d94-ba7a-fc37927d7ad8
+  resourceVersion: "60939"
+  uid: 6b649893-819c-4541-b457-1466bfdf396a
 spec:
   replicas: 1
   selector:
@@ -69,8 +72,6 @@ spec:
           userDataSecret:
             name: worker-user-data
 status:
-  availableReplicas: 1
   fullyLabeledReplicas: 1
   observedGeneration: 1
-  readyReplicas: 1
   replicas: 1
